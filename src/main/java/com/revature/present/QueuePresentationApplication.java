@@ -1,42 +1,33 @@
 package com.revature.present;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 import com.revature.QueueExampleClass.QueueExample;
 
-@SpringBootApplication
 public class QueuePresentationApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(QueuePresentationApplication.class, args);
 
-		// Instantiating our custom Queue with Generic
-		QueueExample<String> queueExample = new QueueExample<String>();
-
-		// Add to...add an element to the Queue
-		queueExample.add("First person");
-		queueExample.add("Second person");
-		queueExample.add("Third person");
-		queueExample.add("Fourth person");
-		queueExample.add("Fifth person");
-
-		// Poll and remove the first person in line
-		String first = queueExample.poll();
-		System.out.println(first);
-
-		// Peek and see the next person, but do not remove
-		String peekNext = queueExample.peek();
-		System.out.println("Alright, we'll take the " + peekNext);
-
-		// Poll and remove the second person in line
-		String second = queueExample.poll();
-		System.out.println(second);
-		
-		// 
-		System.out.println("Alright who are the remaining people?");
-		queueExample.stream().forEach(person -> System.out.println(person));
-		
-	}
-
+    public static void main (String[] args)
+    {
+        // create a queue of capacity 5
+        QueueExample q = new QueueExample(5);
+ 
+        q.enqueue(1);
+        q.enqueue(2);
+        q.enqueue(3);
+ 
+        System.out.println("The front element is " + q.peek());
+        q.dequeue();
+        System.out.println("The front element is " + q.peek());
+ 
+        System.out.println("The queue size is " + q.size());
+ 
+        q.dequeue();
+        q.dequeue();
+ 
+        if (q.isEmpty()) {
+            System.out.println("The queue is empty");
+        }
+        else {
+            System.out.println("The queue is not empty");
+        }
+    }
 }
