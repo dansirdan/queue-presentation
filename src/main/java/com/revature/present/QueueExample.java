@@ -1,14 +1,16 @@
-package com.revature.QueueExampleClass;
+package com.revature.present;
 
-//A class to represent a queue
 public class QueueExample {
-	private int[] arr; // array to store queue elements
-	private int front; // front points to the front element in the queue
-	private int rear; // rear points to the last element in the queue
-	private int capacity; // maximum capacity of the queue
-	private int count; // current size of the queue
+	private int[] arr;
+	// front points to the front element in the queue
+	private int front;
+	// rear points to the last element in the queue
+	private int rear;
+	// maximum capacity of the queue
+	private int capacity;
+	// current size of the queue
+	private int count; 
 
-	// Constructor to initialize a queue
 	public QueueExample(int size) {
 		arr = new int[size];
 		capacity = size;
@@ -21,7 +23,7 @@ public class QueueExample {
 	public void dequeue() {
 		// check for queue underflow
 		if (isEmpty()) {
-			System.out.println("Underflow\nProgram Terminated");
+			System.out.println("Underflow");
 			System.exit(1);
 		}
 
@@ -35,7 +37,7 @@ public class QueueExample {
 	public void enqueue(int item) {
 		// check for queue overflow
 		if (isFull()) {
-			System.out.println("Overflow\nProgram Terminated");
+			System.out.println("Overflow");
 			System.exit(1);
 		}
 
@@ -49,7 +51,7 @@ public class QueueExample {
 	// Utility function to return the front element of the queue
 	public int peek() {
 		if (isEmpty()) {
-			System.out.println("Underflow\nProgram Terminated");
+			System.out.println("Underflow");
 			System.exit(1);
 		}
 		return arr[front];

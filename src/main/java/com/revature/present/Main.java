@@ -1,8 +1,6 @@
 package com.revature.present;
 
-import com.revature.QueueExampleClass.QueueExample;
-
-public class QueuePresentationApplication {
+public class Main {
 
 
     public static void main (String[] args)
