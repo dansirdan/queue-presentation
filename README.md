@@ -8,7 +8,7 @@ We define a `public` `class` with the following fields:
 - arr: the array to store our elements (in this case numbers)
 - front: points to the front number
 - rear: points to the back number
-- capacity: the size of the queue (optional)
+- capacity: the size of the queue
 - count: current amount in the queue
 
 ```
@@ -87,8 +87,9 @@ Next we need to implement the following member methods:
 
 ## Underflow & Overflow: What are they?
 
-Overflow is when you try to add extra items above the defined capacity (if you want your queue to have a capacity).
+Overflow is when you try to add extra items above the defined capacity.
 Underflow is when you try to get an element when there is no elements in the queue.
 
 dequeue - we check for underflow by calling the isEmpty() method
 enqueue - we check for overflow by calling the isFull() method
+
